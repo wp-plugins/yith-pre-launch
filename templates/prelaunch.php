@@ -4,7 +4,7 @@
  *
  * @author Your Inspiration Themes
  * @package YITH Pre-Launch
- * @version 1.0.1
+ * @version 1.0.2
  */
 
     $background_role = array();
@@ -117,7 +117,7 @@
                 <?php echo $message; ?>
             </div>
 
-            <img src="<?php echo $mascotte ?>" alt="Mascotte" class="mascotte" />
+            <?php if( !empty( $mascotte ) ) ?><img src="<?php echo $mascotte ?>" alt="Mascotte" class="mascotte" /><?php endif ?>
 
             <?php if ( $countdown['enabled'] ) : ?>
             <div class="countdown">
