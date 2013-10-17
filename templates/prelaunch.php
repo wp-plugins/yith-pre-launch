@@ -117,7 +117,7 @@
                 <?php echo $message; ?>
             </div>
 
-            <?php if( !empty( $mascotte ) ) ?><img src="<?php echo $mascotte ?>" alt="Mascotte" class="mascotte" /><?php endif ?>
+            <?php if( !empty( $mascotte ) ): ?><img src="<?php echo $mascotte ?>" alt="Mascotte" class="mascotte" /><?php endif ?>
 
             <?php if ( $countdown['enabled'] ) : ?>
             <div class="countdown">

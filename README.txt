@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: prelaunch, maintenance, construction, themes, yit
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,10 @@ No, you can deactive the prelaunch mode page even if the plugin is active.
 2. The general settings
 
 == Changelog ==
+
+= 1.0.3 =
+
+* Minor bugs fixes
 
 = 1.0.2 =
 
