@@ -101,9 +101,12 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
 
             extract( $this->_vars() );
 
+            $theme_path = defined( 'YIT' ) && defined( 'YIT_CORE_VERSION' ) && version_compare( YIT_CORE_VERSION, '2.0.0', '<=' ) ? YIT_THEME_TEMPLATES_PATH . '/prelaunch/' : get_template_directory();
+            $child_path = defined( 'YIT' ) && defined( 'YIT_CORE_VERSION' ) && version_compare( YIT_CORE_VERSION, '2.0.0', '<=' ) ? str_replace( get_template_directory(), get_stylesheet_directory(), YIT_THEME_TEMPLATES_PATH ) . '/prelaunch/': get_stylesheet_directory();
+
             $plugin_path   = plugin_dir_path(__FILE__) . 'templates/' . $this->template_file;
-            $template_path = get_template_directory() . '/' . $this->template_file;
-            $child_path    = get_stylesheet_directory() . '/' . $this->template_file;
+            $template_path = $theme_path . $this->template_file;
+            $child_path    = $child_path . $this->template_file;
 
             foreach ( array( 'child_path', 'template_path', 'plugin_path' ) as $var ) {
                 if ( file_exists( ${$var} ) ) {

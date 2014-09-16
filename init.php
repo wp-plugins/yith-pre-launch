@@ -3,7 +3,7 @@
  * Plugin Name: YITH Pre-Launch
  * Plugin URI: http://yithemes.com/
  * Description: YITH Pre-Launch allows you to add a prelaunch page and customize it.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Your Inspiration Themes
  * Author URI: http://yithemes.com/
  * Text Domain: yit
@@ -11,7 +11,7 @@
  *
  * @author Your Inspiration Themes
  * @package YITH Pre-Launch
- * @version 1.0.3
+ * @version 1.0.4
  */
 /*  Copyright 2013  Your Inspiration Themes  (email : plugins@yithemes.com)
 
@@ -32,9 +32,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
 /* Include common functions */
 if( !defined('YITH_FUNCTIONS') ) {
-    require_once( 'yit-common/google_fonts.php' );
     require_once( 'yit-common/yit-functions.php' );
-    require_once( 'yit-common/yith-panel.php' );
 }
 
 load_plugin_textdomain( 'yit', false, dirname( plugin_basename( __FILE__ ) ). '/languages/' );
@@ -42,10 +40,22 @@ load_plugin_textdomain( 'yit', false, dirname( plugin_basename( __FILE__ ) ). '/
 define( 'YITH_PRELAUNCH', true );
 define( 'YITH_PRELAUNCH_URL', plugin_dir_url( __FILE__ ) );
 define( 'YITH_PRELAUNCH_DIR', plugin_dir_path( __FILE__ ) );
+define( 'YITH_PRELAUNCH_OPTIONS_FILE', 'yith-prelaunch-options.php' );
 
 // Load required classes and functions
 require_once('functions.yith-prelaunch.php');
-require_once('yith-prelaunch-options.php');
+
+$child_path     = get_stylesheet_directory() . '/theme/assets/prelaunch/' . YITH_PRELAUNCH_OPTIONS_FILE;
+$theme_path     = get_template_directory()   . '/theme/assets/prelaunch/' . YITH_PRELAUNCH_OPTIONS_FILE;
+$plugin_path    = YITH_PRELAUNCH_DIR . YITH_PRELAUNCH_OPTIONS_FILE;
+
+foreach ( array( $child_path, $theme_path, $plugin_path ) as $var ) {
+    if ( file_exists( $var ) ) {
+       require_once( $var );
+        break;
+    }
+}
+
 require_once('class.yith-prelaunch-admin.php');
 require_once('class.yith-prelaunch-frontend.php');
 require_once('class.yith-prelaunch.php');
