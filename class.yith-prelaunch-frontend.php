@@ -44,10 +44,7 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
             if ( ! yith_prelaunch_is_enabled() ) return $this;
 
             // start frontend
-            if( !is_admin() ) {
-                add_action( 'init', array( $this, 'activate_prelaunch'), 99 );
-            }
-
+            add_action( 'template_redirect', array( $this, 'activate_prelaunch'), 99 );
             add_action( 'admin_bar_menu', array( &$this, 'admin_bar_menu' ), 1000 );
             add_action( 'wp_head', array( &$this, 'custom_style'));
             add_action( 'wp_footer', array( &$this, 'assets'));
