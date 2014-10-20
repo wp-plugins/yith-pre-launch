@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH Pre-Launch\n"
-"POT-Creation-Date: 2014-09-16 15:22+0100\n"
-"PO-Revision-Date: 2014-09-16 15:22+0100\n"
+"POT-Creation-Date: 2014-10-20 13:43+0100\n"
+"PO-Revision-Date: 2014-10-20 13:44+0100\n"
 "Last-Translator: Nicola Mustone <mail@nicolamustone.it>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "Language: English\n"
@@ -30,7 +30,7 @@ msgstr "Impostazioni"
 msgid "Docs"
 msgstr "Documentazione"
 
-#: ../class.yith-prelaunch-frontend.php:71
+#: ../class.yith-prelaunch-frontend.php:70
 msgid "Pre-Launch Active"
 msgstr "Modalità Pre-lancio attiva"
 
@@ -283,13 +283,12 @@ msgid "Countdown"
 msgstr "Conto alla rovescia"
 
 #: ../yith-prelaunch-options.php:214
-#, fuzzy
 msgid "Enable countdown"
 msgstr "Conto alla rovescia"
 
 #: ../yith-prelaunch-options.php:215
 msgid "Tick if you want to show the countdown."
-msgstr ""
+msgstr "Seleziona per abilitare il conto alla rovescia"
 
 #: ../yith-prelaunch-options.php:220
 msgid "Countdown to"
@@ -426,7 +425,6 @@ msgid "The label for the submit button"
 msgstr "La label per il pulsante di invio"
 
 #: ../yith-prelaunch-options.php:353
-#, fuzzy
 msgid "GET NOTIFIED"
 msgstr "AGGIORNAMI"
 
@@ -523,12 +521,10 @@ msgid "Set the URL of your Behance profile"
 msgstr "IMposta l'URL del tuo profilo Behance"
 
 #: ../yith-prelaunch-options.php:423
-#, fuzzy
 msgid "Dribbble"
 msgstr "Dribble"
 
 #: ../yith-prelaunch-options.php:424
-#, fuzzy
 msgid "Set the URL of your dribbble profile"
 msgstr "Imposta l'URL del tuo profilo dribble"
 

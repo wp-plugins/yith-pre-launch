@@ -35,6 +35,8 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
         /**
          * Constructor
          *
+         * @param $version
+         *
          * @return YITH_Prelaunch_Frontend
          * @since 1.0.0
          */
@@ -47,7 +49,7 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
             add_action( 'template_redirect', array( $this, 'activate_prelaunch'), 99 );
             add_action( 'admin_bar_menu', array( &$this, 'admin_bar_menu' ), 1000 );
             add_action( 'wp_head', array( &$this, 'custom_style'));
-            add_action( 'wp_footer', array( &$this, 'assets'));
+            add_action( 'wp_footer', array( &$this, 'assets' ));
             add_action( 'admin_head', array( &$this, 'custom_style'));
 
             return $this;
@@ -86,6 +88,8 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
          * Enqueue the assets
          */
         public function assets() {
+            do_action( 'yit_prelaunch_footer' );
+            wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'jquery-countdown', YITH_PRELAUNCH_URL . 'assets/js/jquery.countdown.js', array('jquery') );
         }
 
@@ -258,8 +262,6 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
                     'label_font' => yit_typo_option_to_css( get_option('yith_prelaunch_labels_font') ),
                 )
             );
-
-
 
             return $vars;
         }
