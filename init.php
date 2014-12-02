@@ -3,7 +3,7 @@
  * Plugin Name: YITH Pre-Launch
  * Plugin URI: http://yithemes.com/
  * Description: YITH Pre-Launch allows you to add a prelaunch page and customize it.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: Your Inspiration Themes
  * Author URI: http://yithemes.com/
  * Text Domain: yit
@@ -41,18 +41,30 @@ define( 'YITH_PRELAUNCH', true );
 define( 'YITH_PRELAUNCH_URL', plugin_dir_url( __FILE__ ) );
 define( 'YITH_PRELAUNCH_DIR', plugin_dir_path( __FILE__ ) );
 define( 'YITH_PRELAUNCH_OPTIONS_FILE', 'yith-prelaunch-options.php' );
+define( 'YITH_PRELAUNCH_VERSION', '1.0.7' );
 
 // Load required classes and functions
-require_once('functions.yith-prelaunch.php');
+require_once( 'functions.yith-prelaunch.php' );
 
-$child_path     = get_stylesheet_directory() . '/theme/assets/prelaunch/' . YITH_PRELAUNCH_OPTIONS_FILE;
-$theme_path     = get_template_directory()   . '/theme/assets/prelaunch/' . YITH_PRELAUNCH_OPTIONS_FILE;
-$plugin_path    = YITH_PRELAUNCH_DIR . YITH_PRELAUNCH_OPTIONS_FILE;
+$theme_folder       = apply_filters( 'yith_prelaunch_theme_path', '/theme/' );
+/* Old Version Compatibility */
+$old_theme_folder   = '/theme/assets/prelaunch/';
+
+$child_path         = get_stylesheet_directory() . $theme_folder . YITH_PRELAUNCH_OPTIONS_FILE;
+$theme_path         = get_template_directory()   . $theme_folder . YITH_PRELAUNCH_OPTIONS_FILE;
+$plugin_path        = YITH_PRELAUNCH_DIR . YITH_PRELAUNCH_OPTIONS_FILE;
 
 foreach ( array( $child_path, $theme_path, $plugin_path ) as $var ) {
     if ( file_exists( $var ) ) {
        require_once( $var );
        break;
+    } else {
+        /* Old Version Compatibility */
+        $var = str_replace( $theme_folder, $old_theme_folder, $var  );
+        if( file_exists($var) ){
+            require_once( $var );
+            break;
+        }
     }
 }
 

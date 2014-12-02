@@ -2,14 +2,16 @@
 /**
  * Main admin class
  *
- * @author Your Inspiration Themes
+ * @author  Your Inspiration Themes
  * @package YITH Pre-Launch
  * @version 1.0.2
  */
 
-if ( !defined( 'YITH_PRELAUNCH' ) ) { exit; } // Exit if accessed directly
+if ( ! defined( 'YITH_PRELAUNCH' ) ) {
+    exit;
+} // Exit if accessed directly
 
-if( !class_exists( 'YITH_Prelaunch_Admin' ) ) {
+if ( ! class_exists( 'YITH_Prelaunch_Admin' ) ) {
     /**
      * YITH Custom Login Admin
      *
@@ -59,7 +61,7 @@ if( !class_exists( 'YITH_Prelaunch_Admin' ) ) {
          */
         public $banner_url = 'http://cdn.yithemes.com/plugins/yith_prelaunch.php?url';
         public $banner_img = 'http://cdn.yithemes.com/plugins/yith_prelaunch.php';
-        public $doc_url    = 'http://yithemes.com/docs-plugins/yith_prelaunch/';
+        public $doc_url = 'http://yithemes.com/docs-plugins/yith_prelaunch/';
 
         /**
          * Constructor
@@ -73,8 +75,8 @@ if( !class_exists( 'YITH_Prelaunch_Admin' ) ) {
             $this->version = $version;
             $this->submenu = apply_filters( 'yith_prelaunch_submenu', array(
                 'themes.php',
-                __('YITH Pre-Launch', 'yit'),
-                __('Pre-Launch', 'yit'),
+                __( 'YITH Pre-Launch', 'yit' ),
+                __( 'Pre-Launch', 'yit' ),
                 'administrator',
                 'yith-prelaunch'
             ) );
@@ -82,7 +84,7 @@ if( !class_exists( 'YITH_Prelaunch_Admin' ) ) {
 
             add_action( 'init', array( $this, 'init_panel' ) );
             add_action( 'init', array( $this, 'default_options' ) );
-            add_filter( 'plugin_action_links_' . plugin_basename( dirname(__FILE__) . '/init.php' ), array( $this, 'action_links' ) );
+            add_filter( 'plugin_action_links_' . plugin_basename( dirname( __FILE__ ) . '/init.php' ), array( $this, 'action_links' ) );
 
             return $this;
         }
@@ -97,11 +99,11 @@ if( !class_exists( 'YITH_Prelaunch_Admin' ) ) {
          * @since 1.0.0
          */
         public function default_options() {
-            foreach ($this->options as $tab) {
-                foreach( $tab['sections'] as $section ) {
+            foreach ( $this->options as $tab ) {
+                foreach ( $tab['sections'] as $section ) {
                     foreach ( $section['fields'] as $id => $value ) {
                         if ( isset( $value['std'] ) && isset( $id ) ) {
-                            add_option($id, $value['std']);
+                            add_option( $id, $value['std'] );
                         }
                     }
                 }
@@ -116,14 +118,14 @@ if( !class_exists( 'YITH_Prelaunch_Admin' ) ) {
          */
         public function init_panel() {
             $this->panel = new YITH_Panel(
-                                    $this->submenu,
-                                    $this->options,
-                                    array(
-                                        'url' => $this->banner_url,
-                                        'img' => $this->banner_img
-                                    ),
-                                    'yith-prelaunch-group',
-                                    'yith-prelaunch'
+                $this->submenu,
+                $this->options,
+                array(
+                    'url' => $this->banner_url,
+                    'img' => $this->banner_img
+                ),
+                'yith-prelaunch-group',
+                'yith-prelaunch'
             );
         }
 
@@ -131,7 +133,9 @@ if( !class_exists( 'YITH_Prelaunch_Admin' ) ) {
          * action_links function.
          *
          * @access public
+         *
          * @param mixed $links
+         *
          * @return void
          */
         public function action_links( $links ) {

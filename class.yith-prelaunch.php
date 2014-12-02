@@ -22,7 +22,7 @@ if( !class_exists( 'YITH_Prelaunch' ) ) {
          * @var string
          * @since 1.0.0
          */
-        public $version = '1.0.6';
+        public $version = YITH_PRELAUNCH_VERSION;
 
         /**
          * Plugin object

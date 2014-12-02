@@ -266,5 +266,9 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
             return $vars;
         }
 
+        public static function userIsAllowed() {
+            global $yith_prelaunch;
+            return $yith_prelaunch->obj->_userIsAllowed();
+        }
     }
 }
