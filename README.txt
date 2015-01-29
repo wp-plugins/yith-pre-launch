@@ -29,7 +29,7 @@ YITH Pre-Launch will add a new page under Appearance -> Pre-Launch, where you ca
 
 = Developer =
 
-Are you a developer? Want to customize the templates or the style of the plugin? Read on the [documentation](http://yithemes.com/docs-plugins/yith_prelaunch/) and discover how to do that.
+Are you a developer? Want to customize the templates or the style of the plugin? Read on the [documentation](http://yithemes.com/docs-plugins/yith_pre_launch/) and discover how to do that.
 
 = Support =
 
@@ -118,7 +118,7 @@ If you have created your own language pack, or have an update for an existing on
 
 == Documentation ==
 
-Full documentation is available [here](http://yithemes.com/docs-plugins/yith_prelaunch/).
+Full documentation is available [here](http://yithemes.com/docs-plugins/yith_pre_launch/).
 
 == Upgrade notice ==
 
