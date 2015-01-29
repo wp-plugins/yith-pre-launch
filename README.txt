@@ -16,7 +16,7 @@ YITH Pre-Launch give you the ability to have a simple Pre-Launch page for your w
 If you are been launching your website and would like to make it known to your visitors, install the plugin `YITH Pre-Launch` to quickly set
 a lovely page customizable to show to your visitors to warn them of the ongoing prelaunch, with a pretty countodown in real time.
 
-A working demo is available [here](http://plugins.yithemes.com/yith-prelaunch/). Full documentation is available [here](http://yithemes.com/docs-plugins/yith_prelaunch/).
+A working demo is available [here](http://plugins.yithemes.com/yith-prelaunch/). Full documentation is available [here](http://yithemes.com/docs-plugins/yith_pre_launch/).
 
 
 = Installation =
