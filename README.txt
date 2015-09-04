@@ -3,8 +3,8 @@
 Contributors: yithemes
 Tags: prelaunch, maintenance, construction, themes, yit
 Requires at least: 3.5.1
-Tested up to: 4.1
-Stable tag: 1.0.7
+Tested up to: 4.3
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,17 +31,6 @@ YITH Pre-Launch will add a new page under Appearance -> Pre-Launch, where you ca
 
 Are you a developer? Want to customize the templates or the style of the plugin? Read on the [documentation](http://yithemes.com/docs-plugins/yith_pre_launch/) and discover how to do that.
 
-= Support =
-
-Hi there, we have good news here: all our plugins are released for free. Wow!
-Already knew it, right?! Great, but maybe you do not know that: if you're looking for how to install the plugins or how to use them within your Wordpress installations, which is the right way to ask support?
-That's the way:
-
-* Register on http://yithemes.com
-* Go to Support > Get Support
-
-Here we provide support, not on wordpress.org were, usually we do not read topics. It's better to follow us or write on our forum!
-
 == Installation ==
 
 1. Unzip the downloaded zip file.
@@ -62,6 +51,11 @@ No, you can deactive the prelaunch mode page even if the plugin is active.
 2. The general settings
 
 == Changelog ==
+
+= 1.1.0 =
+
+* Tweak: Hidden fields on newsletter form
+* Fixed: Reflected Cross-Site Scripting (XSS) in plugin panel page
 
 = 1.0.7 =
 

@@ -231,7 +231,7 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
                     'email_label' => get_option('yith_prelaunch_newsletter_email_label'),
                     'email_name'  => get_option('yith_prelaunch_newsletter_email_name'),
                     'email_font'  => yit_typo_option_to_css( get_option('yith_prelaunch_newsletter_email_font') ),
-                    'hidden_fields' => wp_parse_args( get_option('yith_prelaunch_newsletter_hidden_fields') ),
+                    'hidden_fields' => array(),
                 ),
                 'custom' => get_option('yith_prelaunch_custom_style'),
                 'title' => get_option('yith_prelaunch_newsletter_title'),
@@ -262,6 +262,13 @@ if( !class_exists( 'YITH_Prelaunch_Frontend' ) ) {
                     'label_font' => yit_typo_option_to_css( get_option('yith_prelaunch_labels_font') ),
                 )
             );
+
+            $hidden = get_option('yith_prelaunch_newsletter_hidden_fields');
+            $hidden_fields = explode( '&', $hidden );
+            foreach ( $hidden_fields as $field ) {
+                list( $key, $val ) = explode( '=', $field );
+                $vars['newsletter']['hidden_fields'][$key] = $val;
+            }
 
             return $vars;
         }
